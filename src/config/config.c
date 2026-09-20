@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <rstb_common.h>
 #include <rstb_da.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -60,9 +61,24 @@ void config_init_default(rori_config_t* self)
 bool config_load_file(rori_config_t* self, const char* file)
 {
     RORI_ASSERT(self != NULL && "skill issue");
+    RORI_ASSERT(file != NULL && "skill issue");
     config_init_default(self);
-    UNUSED(file);
-    UNIMPLEMENTED;
+    bool result = false;
+    FILE* f = fopen(file, "rb");
+    if (f == NULL) goto done;
+    fseek(f, 0, SEEK_END);
+    long size = ftell(f);
+    if (size < 0) goto done;
+    rewind(f);
+    char *buffer = malloc(size + 1);
+    if (!buffer) goto done;
+    usize read_bytes = fread(buffer, 1, size, f);
+    buffer[read_bytes] = '\0';
+    self->buffer = buffer;
+    result = parse(self);
+done:
+    fclose(f);
+    return result;
 }
 
 bool config_parse_buffer(rori_config_t* self, const char* buffer)
