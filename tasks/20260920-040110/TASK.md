@@ -1,6 +1,6 @@
 # implement animation loop rendering for the spritesheet
 
-- STATUS: OPEN
+- STATUS: CLOSED
 - PRIORITY: 100
 - TAGS: rendering
 
