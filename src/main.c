@@ -1,4 +1,5 @@
 #include "companion_config.h"
+#include "config/config.h"
 #include "render.h"
 #include "spritesheet.h"
 #include "input.h"
@@ -7,17 +8,21 @@
 
 #include <raylib.h>
 #include <rstb_common.h>
+#include <stdio.h>
 
 int main()
 {
-    SetConfigFlags(
-    FLAG_VSYNC_HINT          | 
-           FLAG_WINDOW_UNDECORATED  | 
-           FLAG_WINDOW_TRANSPARENT  | 
-           FLAG_WINDOW_TOPMOST
-    );
+    config_load();
+    u32 raylib_cfg_flag = 
+            FLAG_WINDOW_UNDECORATED  | 
+            FLAG_WINDOW_TRANSPARENT  | 
+            FLAG_WINDOW_TOPMOST;
+    if (config_vsync()) {
+        raylib_cfg_flag |= FLAG_VSYNC_HINT;
+    }
+    SetConfigFlags(raylib_cfg_flag);
     InitWindow(config_get_width(), config_get_height(), "Lilith");
-    SetTargetFPS(60);
+    SetTargetFPS(144);
 
     Texture lilith_tex = LoadTexture("./resources/Spritesheet.png");
 
@@ -31,11 +36,11 @@ int main()
     );
 
     set_render_sprite(&lilith_idle);
-    set_render_fps(30);
+    set_render_fps(config_fps());
     input_init();
 
     while (!WindowShouldClose()) {
-        force_ontop();
+        if (config_force_ontop()) force_ontop();
         input_default_update(config_get_width(), config_get_height());
 
         if (IsMouseButtonPressed(MOUSE_BUTTON_RIGHT)) {
