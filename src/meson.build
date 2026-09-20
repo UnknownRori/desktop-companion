@@ -1,5 +1,8 @@
 src_files = files(
+  'companion_config.c',
+  'input.c',
   'main.c',
+  'render.c',
   'spritesheet.c',
   'window.c',
 )
