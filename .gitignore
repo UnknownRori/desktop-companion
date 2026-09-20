@@ -1,0 +1,15 @@
+compile_commands.json
+
+*.o
+*.dll
+*.so
+*.a
+*.exe
+
+# assets file
+*.png
+*.zip
+*.kra
+*.kra~
+*.ase
+*.aseprite
