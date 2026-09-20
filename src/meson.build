@@ -5,6 +5,7 @@ src_files = files(
   'render.c',
   'spritesheet.c',
   'window.c',
+  'config/config.c',
 )
 
 dependencies = [raylib_dep]
