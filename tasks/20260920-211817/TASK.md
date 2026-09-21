@@ -1,6 +1,6 @@
 # move config implementation to seperate repository
 
-- STATUS: OPEN
+- STATUS: CLOSED
 - PRIORITY: 100
 - TAGS: dependency
 

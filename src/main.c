@@ -5,7 +5,6 @@
  */
 
 #include "companion_config.h"
-#include "config/config.h"
 #include "render.h"
 #include "spritesheet.h"
 #include "input.h"
@@ -14,7 +13,6 @@
 
 #include <raylib.h>
 #include <rstb_common.h>
-#include <stdio.h>
 
 int main()
 {

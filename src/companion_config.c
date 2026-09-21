@@ -5,7 +5,8 @@
  */
 
 #include "companion_config.h"
-#include "config/config.h"
+#define RORI_RCONFIG_NO_PREFIX
+#include <rconfig.h>
 #include <raylib.h>
 
 static rori_config_t s_config;
