@@ -5,6 +5,7 @@
  */
 
 #include "companion_config.h"
+#include "config.h"
 #include "render.h"
 #include "spritesheet.h"
 #include "input.h"
@@ -28,14 +29,24 @@ int main()
     InitWindow(config_get_width(), config_get_height(), "Lilith");
     SetTargetFPS(144);
 
-    Texture lilith_tex = LoadTexture("./resources/Spritesheet.png");
+    // TODO : extract this to somewhere
+    ChangeDirectory("resources");
+    char section_name[1024];
+    config_get_animation_section("default", section_name, 1024);
+
+    char path[1024];
+    config_get_animation_path(section_name, path, 1024);
+    Texture lilith_tex = LoadTexture(path);
+
+    animation_info_t anim;
+    config_get_animation_info(section_name, &anim);
 
     spritesheet_t lilith_idle;
     spritesheet_init(
         &lilith_idle, 
-        14, 
-        14, 
-        10, 
+        anim.row, 
+        anim.col, 
+        anim.tail, 
         lilith_tex
     );
 
