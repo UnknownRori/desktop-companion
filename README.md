@@ -1,5 +1,7 @@
 # Desktop Companion
 
+https://github.com/user-attachments/assets/7bd9654f-1ee6-4c25-b954-68015a3cf9b4
+
 Desktop Companion is a simple companion software that display cute character on top
 of everything you have in your screen. 
 
