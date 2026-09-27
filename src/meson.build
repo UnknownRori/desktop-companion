@@ -4,6 +4,7 @@ src_files = files(
   'main.c',
   'render.c',
   'spritesheet.c',
+  'animation.c',
   'window.c',
 )
 

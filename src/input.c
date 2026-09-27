@@ -5,6 +5,7 @@
  */
 
 #include "types.h"
+#include "input.h"
 #include <raylib.h>
 
 static bool s_dragged = false;
@@ -48,4 +49,9 @@ void input_default_update(u32 sprite_width, u32 sprite_height)
     if (IsMouseButtonPressed(MOUSE_BUTTON_MIDDLE)) {
         SetWindowSize(sprite_width, sprite_height);
     }
+}
+
+bool input_is_move()
+{
+    return s_dragged;
 }

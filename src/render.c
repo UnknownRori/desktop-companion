@@ -19,7 +19,6 @@ void set_render_sprite(spritesheet_t* spritesheet)
 {
     RORI_ASSERT(spritesheet != NULL && "Skill issue");
     s_active = spritesheet;
-    s_frame_time = 0.f;
     s_timer = 0.f;
 }
 

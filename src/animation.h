@@ -4,13 +4,8 @@
  * See LICENSE file in repository root for full terms.
  */
 
-
 #pragma once
 
-#include "types.h"
+#include "spritesheet.h"
 
-void input_init();
-void input_default_update(u32 sprite_width, u32 sprite_height);
-
-bool input_is_move();
-bool input_is_move_press();
+bool animation_get(spritesheet_t* spritesheet, const char* name);

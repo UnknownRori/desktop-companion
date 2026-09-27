@@ -1,6 +1,6 @@
 # implement expression based on event
 
-- STATUS: OPEN
+- STATUS: CLOSED
 - PRIORITY: 100
 - TAGS: rendering,sprite
 
