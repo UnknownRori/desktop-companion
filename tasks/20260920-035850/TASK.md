@@ -1,6 +1,6 @@
 # parse the config file for more cuztomization
 
-- STATUS: OPEN
+- STATUS: CLOSED
 - PRIORITY: 100
 - TAGS: config
 
