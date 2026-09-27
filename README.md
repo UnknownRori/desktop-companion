@@ -1,7 +1,12 @@
 # Desktop Companion
 
 Desktop Companion is a simple companion software that display cute character on top
-of everything you have in your screen.
+of everything you have in your screen. 
+
+for now the assets is closed and I will release at patreon or Ko-fi instead 
+of this unfriendly place for non nerd, share the ing .exe you smelly nerd.
+
+there are post regarding the project in r/touhou at 20 September 2026, I will list the link here but I'm lazy.
 
 ## Requirements
 
